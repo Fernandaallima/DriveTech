@@ -21,7 +21,7 @@ def buscar_notificacoes():
         JOIN clientes c ON v.cliente_id = c.id
         WHERE 1=1
     """
-    params = []
+    params = []  
 
     if cliente:
         query += " AND c.nome LIKE ?"
