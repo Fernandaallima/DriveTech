@@ -39,12 +39,22 @@ def toggle_senha():
 # Janela principal
 root = tk.Tk()
 root.title("Login - Drive Tech")
-root.geometry("500x400")
+root.geometry("800x500")
 root.configure(bg="#d3d3d3")
 
-# Logo fictício
-logo = tk.Label(root, text="DRIVE\nTECH", font=("Arial Black", 24), bg="#d3d3d3")
-logo.pack(pady=30)
+# Mensagem de boas-vindas
+welcome = tk.Label(root, text="Seja Bem-Vindo(a)!", font=("Arial", 12, "bold"), bg="#d3d3d3")
+welcome.place(x=20, y=20)
+
+# Logo 
+try:
+    logo_img = tk.PhotoImage(file="logo.png")  
+    logo_label = tk.Label(root, image=logo_img, bg="#d3d3d3")
+    logo_label.pack(pady=20)
+except:
+    # fallback se não tiver a imagem
+    logo_label = tk.Label(root, text="DRIVE TECH", font=("Arial Black", 24), bg="#d3d3d3")
+    logo_label.pack(pady=20)
 
 # Frame do login
 frame = tk.Frame(root, bg="#2c2c2c", padx=20, pady=20)
